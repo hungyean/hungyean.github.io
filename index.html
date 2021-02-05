@@ -111,7 +111,7 @@
 	  onSuccess: function(stage, result) {
 //             test = JSON.stringify(result);
 	    console.log("SEE RESULT " + JSON.stringify(result));
-	    $('#testing').innerHTML = JSON.stringify(result);
+	   document.getElementById("testing").innerHTML = JSON.stringify(result);
 	  },
 
 	  onError:function(stage, error){
