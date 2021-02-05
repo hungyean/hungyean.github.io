@@ -108,11 +108,11 @@
 	//see result or error
 	wiseai.cameraCapture({
 	  onSuccess: function(stage, result) {
-	    console.log("SEE RESULT " + result);
+	    console.log("SEE RESULT " + JSON.stringify(result));
 	  },
 
 	  onError:function(stage, error){
-	    console.error("SEE ERROR " + error);
+	    console.error("SEE ERROR " + JSON.stringify(error));
 	  }
 	});
 	</script>
