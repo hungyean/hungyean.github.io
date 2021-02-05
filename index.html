@@ -8,10 +8,11 @@
 		<script src="../js/wailib-sdk-1.7.6.js"></script>
 	</head>
 	<body>
+	<div id ="testing"></div>
 	<div id="myDiv">
 	</div>
 	<script>
-		let wiseai = new WAILib.SDK("ed69115c-3cc1-43c0-adc7-e11f4a763e98",
+		let wiseai = new WAILib.SDK("d0b6eac2-e494-4fe5-8075-b528139e1263",
 		"https://ekyc-live-api.wiseai.tech",
 		"myDiv",
 		{
@@ -105,18 +106,18 @@
 		wiseai.startCamera();
 	});
 
-         function testing(){
-	 	wiseai.cameraCapture({
-		  onSuccess: function(stage, result) {
-	//             test = JSON.stringify(result);
-		    console.log("SEE RESULT " + JSON.stringify(result));
-		  },
+ 
+	wiseai.cameraCapture({
+	  onSuccess: function(stage, result) {
+//             test = JSON.stringify(result);
+	    console.log("SEE RESULT " + JSON.stringify(result));
+	    $('#testing').innerHTML = JSON.stringify(result);
+	  },
 
-		  onError:function(stage, error){
-		    console.error("SEE ERROR " + JSON.stringify(error));
-		  }
-		});
-	 }
+	  onError:function(stage, error){
+	    console.error("SEE ERROR " + JSON.stringify(error));
+	  }
+	});
 	//see result or error
 	
 	</script>
