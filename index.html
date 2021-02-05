@@ -8,117 +8,117 @@
 		<script src="../js/wailib-sdk-1.7.6.js"></script>
 	</head>
 	<body>
-	<div id ="testing"></div>
+	<div id ="testing">Hello</div>
 	<div id="myDiv">
 	</div>
 	<script>
-		let wiseai = new WAILib.SDK("689daa13-d802-47d1-98e4-4f8a3f0e9e6c",
-		"https://ekyc-live-api.wiseai.tech",
-		"myDiv",
-		{
-			docType: "mykad", //document type.
-			//type of the face selfie stage. Available type is either 'image' or 'video'. Default value is image
-			faceType: "image",
-			faceVideoLength: 5, //length of face video recording in second
-			enableLiveness: true, //set true to enable liveness check. Only applicable if faceType is set to 'video'. Default value is true
-			//whether to display the default action buttons (e.g. the camera capture button) .Default value is true
-			showActionButtons: true,
-			//Customization for action buttons
-			actionButtons: {
-				cameraCapture: { //the camera shuttle button
-					css: '', //css class for button customization
-					elementId: '' //specify an element to override the default button
-				},
-				retake: {  //the retake button in preview page
-					text: 'Retake', //the display text of the button
-					css: '', //css class for button customization
-					elementId: ''  //specify an element to override the default button
-				},
-				proceed:{ // the proceed button in preview page
-					text: 'Proceed', //the display text of the button
-					css: '', //css class for button customization
-					elementId: '' // specify an element to override the default button
-				}
-			},
+// 		let wiseai = new WAILib.SDK("689daa13-d802-47d1-98e4-4f8a3f0e9e6c",
+// 		"https://ekyc-live-api.wiseai.tech",
+// 		"myDiv",
+// 		{
+// 			docType: "mykad", //document type.
+// 			//type of the face selfie stage. Available type is either 'image' or 'video'. Default value is image
+// 			faceType: "image",
+// 			faceVideoLength: 5, //length of face video recording in second
+// 			enableLiveness: true, //set true to enable liveness check. Only applicable if faceType is set to 'video'. Default value is true
+// 			//whether to display the default action buttons (e.g. the camera capture button) .Default value is true
+// 			showActionButtons: true,
+// 			//Customization for action buttons
+// 			actionButtons: {
+// 				cameraCapture: { //the camera shuttle button
+// 					css: '', //css class for button customization
+// 					elementId: '' //specify an element to override the default button
+// 				},
+// 				retake: {  //the retake button in preview page
+// 					text: 'Retake', //the display text of the button
+// 					css: '', //css class for button customization
+// 					elementId: ''  //specify an element to override the default button
+// 				},
+// 				proceed:{ // the proceed button in preview page
+// 					text: 'Proceed', //the display text of the button
+// 					css: '', //css class for button customization
+// 					elementId: '' // specify an element to override the default button
+// 				}
+// 			},
 
-			//Customization for capturing steps or stages
-			//currently supported stages are:
-			//      - mkyad: "mykadFront", "mykadBack", "mykadFace"
-			stages: {
-				mykadFront: {
-					title: 'Front of MyKad', // display text of the title element
-					message: 'Please position your ID within the frame', //display text of the message element
-					titleCss: '', // css class for title customization
-					messageCss: '', // css class for message customization
-					preview: {
-						message: 'Please make sure the captured photo is clear and without glare', // display text of the preview page message element
-						messageCss: '' // css class for preview page message customization
-					}
-				},
-				mykadBack: {
-					title: 'Back of MyKad', // display text of the title element
-					message: 'Please position your ID within the frame', //display text of the message element
-					titleCss: '', // css class for title customization
-					messageCss: '', // css class for message customization
-					preview: {
-						message: 'Please make sure the captured photo is clear and without glare', // display text of the preview page message element
-						messageCss: '' // css class for preview page message customization
-					}
-				},
-				mykadFace: {
-					title: 'Owner Selfie', // display text of the title element
-					message: 'Please position your face within the frame', //display text of the message element
-					titleCss: '', // css class for title customization
-					messageCss: '', // css class for message customization
-					video: {
-						//display text before video is recording. {countdownSec} is the placeholder for the countdown timer(in second)
-						readyCountdownText: 'Recording starts in {countdownSec}'
-					}
-				}
-			},
-			//Customization for liveness feedbacks messages
-			liveness:{
-				feedbacks: {
-					getReadyText: 'Initializing... Please get ready for video selfie',
-					holdPositionText: 'Capturing... Please hold steady',
-					centerFaceText: 'Please position and center your face within the frame',
-					moveCloserText: 'Too small, please move closer to camera',
-					moveAwayText: 'Too big, please move away from camera'
-				}
-			},
-			//set true to fix camera position and adapt camera size to fit the remaining page spaces without having scroll bar.
-			//The flag will only take effect if screen size is less than 768px
-			cameraFit: true,
-			//flags to turn on to export images in base64 format
-			exports:{
-				exportDocumentImage: false, //exports both front and back of document images, if any
-				exportDocumentFrontImage: false, //exports only front of document image, if any
-				exportDocumentBackImage: false,  //exports only back of document image, if any
-				exportDocumentFaceImage: false, //exports face image which cropped from document, if any
-				exportFaceImage:false, //exports selfie image, if any
-				exportLivenessImages:false //exports up to 5 frames from liveness video selfie, if any
-			},
-		}
-);
+// 			//Customization for capturing steps or stages
+// 			//currently supported stages are:
+// 			//      - mkyad: "mykadFront", "mykadBack", "mykadFace"
+// 			stages: {
+// 				mykadFront: {
+// 					title: 'Front of MyKad', // display text of the title element
+// 					message: 'Please position your ID within the frame', //display text of the message element
+// 					titleCss: '', // css class for title customization
+// 					messageCss: '', // css class for message customization
+// 					preview: {
+// 						message: 'Please make sure the captured photo is clear and without glare', // display text of the preview page message element
+// 						messageCss: '' // css class for preview page message customization
+// 					}
+// 				},
+// 				mykadBack: {
+// 					title: 'Back of MyKad', // display text of the title element
+// 					message: 'Please position your ID within the frame', //display text of the message element
+// 					titleCss: '', // css class for title customization
+// 					messageCss: '', // css class for message customization
+// 					preview: {
+// 						message: 'Please make sure the captured photo is clear and without glare', // display text of the preview page message element
+// 						messageCss: '' // css class for preview page message customization
+// 					}
+// 				},
+// 				mykadFace: {
+// 					title: 'Owner Selfie', // display text of the title element
+// 					message: 'Please position your face within the frame', //display text of the message element
+// 					titleCss: '', // css class for title customization
+// 					messageCss: '', // css class for message customization
+// 					video: {
+// 						//display text before video is recording. {countdownSec} is the placeholder for the countdown timer(in second)
+// 						readyCountdownText: 'Recording starts in {countdownSec}'
+// 					}
+// 				}
+// 			},
+// 			//Customization for liveness feedbacks messages
+// 			liveness:{
+// 				feedbacks: {
+// 					getReadyText: 'Initializing... Please get ready for video selfie',
+// 					holdPositionText: 'Capturing... Please hold steady',
+// 					centerFaceText: 'Please position and center your face within the frame',
+// 					moveCloserText: 'Too small, please move closer to camera',
+// 					moveAwayText: 'Too big, please move away from camera'
+// 				}
+// 			},
+// 			//set true to fix camera position and adapt camera size to fit the remaining page spaces without having scroll bar.
+// 			//The flag will only take effect if screen size is less than 768px
+// 			cameraFit: true,
+// 			//flags to turn on to export images in base64 format
+// 			exports:{
+// 				exportDocumentImage: false, //exports both front and back of document images, if any
+// 				exportDocumentFrontImage: false, //exports only front of document image, if any
+// 				exportDocumentBackImage: false,  //exports only back of document image, if any
+// 				exportDocumentFaceImage: false, //exports face image which cropped from document, if any
+// 				exportFaceImage:false, //exports selfie image, if any
+// 				exportLivenessImages:false //exports up to 5 frames from liveness video selfie, if any
+// 			},
+// 		}
+// );
 
-	$( document ).ready(function() {
-		console.log( "ready!" );
-		wiseai.startCamera();
-	});
+// 	$( document ).ready(function() {
+// 		console.log( "ready!" );
+// 		wiseai.startCamera();
+// 	});
 
  
-	wiseai.cameraCapture({
-	  onSuccess: function(stage, result) {
-//             test = JSON.stringify(result);
-	    console.log("SEE RESULT " + JSON.stringify(result));
-	   document.getElementById("testing").innerHTML = JSON.stringify(result);
-	  },
+// 	wiseai.cameraCapture({
+// 	  onSuccess: function(stage, result) {
+// //             test = JSON.stringify(result);
+// 	    console.log("SEE RESULT " + JSON.stringify(result));
+// 	   document.getElementById("testing").innerHTML = JSON.stringify(result);
+// 	  },
 
-	  onError:function(stage, error){
-	    console.error("SEE ERROR " + JSON.stringify(error));
-	  }
-	});
-	//see result or error
+// 	  onError:function(stage, error){
+// 	    console.error("SEE ERROR " + JSON.stringify(error));
+// 	  }
+// 	});
+// 	//see result or error
 	
 	</script>
 	</body>
