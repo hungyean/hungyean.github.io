@@ -18,7 +18,7 @@
 // 			return 'testing';
 // 		}
 		
-		let wiseai = new WAILib.SDK("64a8a8c0-51fc-43d0-852a-af9209556148",
+		let wiseai = new WAILib.SDK("b863218d-b825-4065-8c51-b8738ad35966",
 		"https://ekyc-live-api.wiseai.tech",
 		"myDiv",
 		{
@@ -113,19 +113,21 @@
 	});
 
         function testing(){
-		var test;
+		
 		wiseai.cameraCapture({
 		  onSuccess: function(stage, result) {
 	//             test = JSON.stringify(result);
 		    console.log("SEE RESULT " + JSON.stringify(result));
 		   test = JSON.stringify(result);
+			 return 'Hello';
 		  },
 
 		  onError:function(stage, error){
 		    console.error("SEE ERROR " + JSON.stringify(error));
+			  return 'Error';
 		  }
 		});
-		return test;
+		
 	}
 	
 // 	//see result or error
