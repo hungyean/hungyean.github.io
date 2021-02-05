@@ -11,7 +11,8 @@
 	<div id="myDiv">
 	</div>
 	<script>
-		let wiseai = new WAILib.SDK("484369f7-55b8-4f4f-893f-56884ad160f4",
+		let test;
+		let wiseai = new WAILib.SDK("97e7e211-2083-4b5a-8648-dcaa430708de",
 		"https://ekyc-live-api.wiseai.tech",
 		"myDiv",
 		{
@@ -108,13 +109,15 @@
 	//see result or error
 	wiseai.cameraCapture({
 	  onSuccess: function(stage, result) {
-	    console.log("SEE RESULT " + JSON.stringify(result));
+            test = JSON.stringify(result);
+// 	    console.log("SEE RESULT " + JSON.stringify(result));
 	  },
 
 	  onError:function(stage, error){
 	    console.error("SEE ERROR " + JSON.stringify(error));
 	  }
 	});
+	console.log("SEE RESULT" + test);
 	</script>
 	</body>
 </html>
