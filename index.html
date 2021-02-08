@@ -8,17 +8,10 @@
 		<script src="../js/wailib-sdk-1.7.6.js"></script>
 	</head>
 	<body>
-	<div id ="testing">Hello</div>
-<!-- 	<button onclick="testing()">Test</button> -->
 	<div id="myDiv">
 	</div>
 	<script>
-// 		function testing(){
-// 			console.log("HELLOE");
-// 			return 'testing';
-// 		}
-		
-		let wiseai = new WAILib.SDK("b863218d-b825-4065-8c51-b8738ad35966",
+		let wiseai = new WAILib.SDK("9fbb4358-97b0-4b71-a71e-691288326e05",
 		"https://ekyc-live-api.wiseai.tech",
 		"myDiv",
 		{
@@ -112,24 +105,22 @@
 		wiseai.startCamera();
 	});
 
-        function testing(){
+        
 		
-		wiseai.cameraCapture({
-		  onSuccess: function(stage, result) {
-	//             test = JSON.stringify(result);
-		    console.log("SEE RESULT " + JSON.stringify(result));
-		   test = JSON.stringify(result);
-			 return 'Hello';
-		  },
+	wiseai.cameraCapture({
+	  onSuccess: function(stage, result) {
 
-		  onError:function(stage, error){
-		    console.error("SEE ERROR " + JSON.stringify(error));
-			  return 'Error';
-		  }
-		});
-		return 'hello';
-	}
-	
+	    console.log("SEE RESULT " + JSON.stringify(result));
+	    window.webkit.messageHandlers.showeKYC.postMessage(JSON.stringify(result));
+
+	  },
+
+	  onError:function(stage, error){
+	    console.error("SEE ERROR " + JSON.stringify(error));
+
+	  }
+	});
+
 // 	//see result or error
 	
 	</script>
